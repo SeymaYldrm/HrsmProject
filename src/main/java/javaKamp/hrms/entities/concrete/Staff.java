@@ -2,28 +2,24 @@ package javaKamp.hrms.entities.concrete;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "staff")
 @Data
-public class Staff {
-	@Id
-	@GeneratedValue
-	@Column(name = "Id")
-	private int Id;
+@EqualsAndHashCode(callSuper = false)
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "staff")
+public class Staff extends User {
 
-	@Column(name = "firs_name")
-	private String firsName;
+	@Column(name = "first_name")
+	private String firstName;
 
 	@Column(name = "last_name")
 	private String lastName;
-
-	public Staff() {
-
-	}
 }
